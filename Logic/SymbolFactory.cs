@@ -24,6 +24,22 @@ public class SymbolFactory
 
         return _cache;
     }
+    
+    public Dictionary<int, AbstractSymbol> GenerateAllNumbers()
+    {
+
+        var res = new Dictionary<int, AbstractSymbol>();
+        
+        int[] vals = new[] {1, 5, 10, 50 ,100, 500, 1000};
+        char[] symboles = new[] {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+        
+        for (var i = 0; i < symboles.Length; i++)
+        {
+            res.Add(vals[i] , CreateSymbol(symboles[i] , vals[i]));
+        }
+
+        return res;
+    }
 
     public AbstractSymbol CreateSymbol(char type , int val)
     {

@@ -16,4 +16,9 @@ public abstract class AbstractSymbol : IComparable<AbstractSymbol>
         if (other != null) return this.Val.CompareTo(other.Val);
         else throw new NullReferenceException();
     }
+
+    public override int GetHashCode()
+    {
+        return Val;
+    }
 }
